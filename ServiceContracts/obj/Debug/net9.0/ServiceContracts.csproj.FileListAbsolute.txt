@@ -1,0 +1,11 @@
+C:\Users\mark_\Documents\test projects\ServiceContracts\bin\Debug\net9.0\ServiceContracts.deps.json
+C:\Users\mark_\Documents\test projects\ServiceContracts\bin\Debug\net9.0\ServiceContracts.dll
+C:\Users\mark_\Documents\test projects\ServiceContracts\bin\Debug\net9.0\ServiceContracts.pdb
+C:\Users\mark_\Documents\test projects\ServiceContracts\obj\Debug\net9.0\ServiceContracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mark_\Documents\test projects\ServiceContracts\obj\Debug\net9.0\ServiceContracts.AssemblyInfoInputs.cache
+C:\Users\mark_\Documents\test projects\ServiceContracts\obj\Debug\net9.0\ServiceContracts.AssemblyInfo.cs
+C:\Users\mark_\Documents\test projects\ServiceContracts\obj\Debug\net9.0\ServiceContracts.csproj.CoreCompileInputs.cache
+C:\Users\mark_\Documents\test projects\ServiceContracts\obj\Debug\net9.0\ServiceContracts.dll
+C:\Users\mark_\Documents\test projects\ServiceContracts\obj\Debug\net9.0\refint\ServiceContracts.dll
+C:\Users\mark_\Documents\test projects\ServiceContracts\obj\Debug\net9.0\ServiceContracts.pdb
+C:\Users\mark_\Documents\test projects\ServiceContracts\obj\Debug\net9.0\ref\ServiceContracts.dll
