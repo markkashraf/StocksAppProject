@@ -5,16 +5,17 @@
     background-color: #f7f7f7;
 }
 
-*
-{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-weight: 700;
 }
 
 .container
 {
     min-width: 500px;
+    
 }
 
 .app-title

@@ -1,1 +1,20 @@
-﻿<p>@ViewBag.test</p>
+﻿@model Entities.StockTrade
+
+@{
+    ViewData["Title"] = "Index"; 
+}
+
+
+
+<div class="box stock"> 
+
+    <div class="stock-title">@Model.StockName (@Model.StockSymbol)</div>
+    <div class="stock-price">$@Model.Price</div>
+    
+
+
+
+</div>
+
+
+

@@ -2,13 +2,18 @@
 {
     public class StockTrade
     {
-        string? StockSymbol { get; set; }
+        public string? StockSymbol { get; set; }
 
-        string? StockName { get; set; }
+        public string? StockName { get; set; }
 
-        double Price { get; set; }
+        public double Price { get; set; }
 
-        uint Quantity { get; set; }
+        public uint Quantity { get; set; }
+    public override string ToString()
+        {
+            return StockSymbol + StockName + Quantity + Price;
+        }
 
     }
+    
 }

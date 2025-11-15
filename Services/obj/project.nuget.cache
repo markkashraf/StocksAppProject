@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "EP0eu0Pz4dY=",
+  "dgSpecHash": "y6To89bSmhw=",
   "success": true,
   "projectFilePath": "C:\\Users\\mark_\\Documents\\test projects\\StocksAppSolution\\Services\\Services.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mark_\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.0\\microsoft.extensions.configuration.10.0.0.nupkg.sha512",
+    "C:\\Users\\mark_\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.0\\microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\mark_\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.0\\microsoft.extensions.primitives.10.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
