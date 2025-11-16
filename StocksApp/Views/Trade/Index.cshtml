@@ -1,4 +1,4 @@
-﻿@using StocksApp.ViewModels
+﻿
 @model StockTrade
 
 @{
@@ -12,7 +12,7 @@
  <span>@Model.StockName</span>
 </div>
 
-<form method="post">
+<form asp-controller="Trade" asp-action="Orders" method="post">
  <div class="box trading-panel">
 
   <div class="flex trading-panel-flex">
@@ -34,9 +34,9 @@
     <div class="flex flex-direction-vertical">
      <h3 class="text-grey mb">New Order</h3>
 
-     <label for="Quantity" class="mt">Quantity:</label>
+     <label asp-for="Quantity" class="mt">Quantity:</label>
      <div class="w-25">
-      <input type="number" name="Quantity" id="Quantity" value="@Model.Quantity" min="1" max="100000" placeholder="Quantity" required="required" class="form-input mb" autofocus="autofocus" />
+      <input asp-for="Quantity" id="Quantity" value="@Model.Quantity" placeholder="Quantity" class="form-input mb" autofocus="autofocus" />
      </div>
     </div>
 

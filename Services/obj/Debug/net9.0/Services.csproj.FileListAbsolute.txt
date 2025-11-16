@@ -14,6 +14,7 @@ C:\Users\mark_\Documents\test projects\Services\obj\Debug\net9.0\refint\Services
 C:\Users\mark_\Documents\test projects\Services\obj\Debug\net9.0\Services.pdb
 C:\Users\mark_\Documents\test projects\Services\obj\Debug\net9.0\ref\Services.dll
 C:\Users\mark_\Documents\test projects\StocksAppSolution\Services\bin\Debug\net9.0\Services.deps.json
+C:\Users\mark_\Documents\test projects\StocksAppSolution\Services\bin\Debug\net9.0\Services.runtimeconfig.json
 C:\Users\mark_\Documents\test projects\StocksAppSolution\Services\bin\Debug\net9.0\Services.dll
 C:\Users\mark_\Documents\test projects\StocksAppSolution\Services\bin\Debug\net9.0\Services.pdb
 C:\Users\mark_\Documents\test projects\StocksAppSolution\Services\bin\Debug\net9.0\ServiceContracts.dll
@@ -28,4 +29,5 @@ C:\Users\mark_\Documents\test projects\StocksAppSolution\Services\obj\Debug\net9
 C:\Users\mark_\Documents\test projects\StocksAppSolution\Services\obj\Debug\net9.0\Services.dll
 C:\Users\mark_\Documents\test projects\StocksAppSolution\Services\obj\Debug\net9.0\refint\Services.dll
 C:\Users\mark_\Documents\test projects\StocksAppSolution\Services\obj\Debug\net9.0\Services.pdb
+C:\Users\mark_\Documents\test projects\StocksAppSolution\Services\obj\Debug\net9.0\Services.genruntimeconfig.cache
 C:\Users\mark_\Documents\test projects\StocksAppSolution\Services\obj\Debug\net9.0\ref\Services.dll

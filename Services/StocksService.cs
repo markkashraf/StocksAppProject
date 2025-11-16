@@ -36,7 +36,10 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
         {
             if (buyOrderRequest == null) throw new ArgumentNullException();
 
-            if(buyOrderRequest.Quantity < 1 || buyOrderRequest.Quantity > 100000) throw new ArgumentException();
+            if(buyOrderRequest.Quantity < 1 || buyOrderRequest.Quantity > 
+                
+                
+                0000) throw new ArgumentException();
 
             if(buyOrderRequest.Price > 10000 ||  buyOrderRequest.Price < 1) throw new ArgumentException();
 

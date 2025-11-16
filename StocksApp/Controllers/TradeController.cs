@@ -10,7 +10,7 @@ using System.Reflection;
 
 namespace StocksApp.Controllers
 {
-    
+    [Route("[controller]")]
     public class TradeController : Controller
     {
         private readonly IOptions<TradingOptions> _options;
@@ -28,7 +28,7 @@ namespace StocksApp.Controllers
         }
         
         [HttpGet("/")]
-        [HttpGet("trade/index")]
+        [HttpGet("[action]")]
         public IActionResult Index()
         {
             _tradingOptions = _options.Value;
@@ -45,7 +45,7 @@ namespace StocksApp.Controllers
             return View(stockTradeViewModel);
         }
 
-        [HttpGet("Trade/Orders")]
+        [HttpGet("[action]")]
         public IActionResult Orders()
         {
             var buyOrders = _stocksService.GetBuyOrders();
@@ -59,7 +59,7 @@ namespace StocksApp.Controllers
 
 
 
-        [HttpPost("Trade/BuyOrder")]
+        [HttpPost("[action]")]
 
         public IActionResult BuyOrder(BuyOrderRequest buyOrder)
         {
@@ -80,7 +80,7 @@ namespace StocksApp.Controllers
         }
 
 
-        [HttpPost("Trade/SellOrder")]
+        [HttpPost("[action]")]
 
         public IActionResult SellOrder(SellOrderRequest sellOrder)
         {

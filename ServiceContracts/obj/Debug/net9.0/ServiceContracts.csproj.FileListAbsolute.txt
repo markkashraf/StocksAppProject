@@ -10,8 +10,10 @@ C:\Users\mark_\Documents\test projects\ServiceContracts\obj\Debug\net9.0\refint\
 C:\Users\mark_\Documents\test projects\ServiceContracts\obj\Debug\net9.0\ServiceContracts.pdb
 C:\Users\mark_\Documents\test projects\ServiceContracts\obj\Debug\net9.0\ref\ServiceContracts.dll
 C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\bin\Debug\net9.0\ServiceContracts.deps.json
+C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\bin\Debug\net9.0\ServiceContracts.runtimeconfig.json
 C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\bin\Debug\net9.0\ServiceContracts.dll
 C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\bin\Debug\net9.0\ServiceContracts.pdb
+C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\obj\Debug\net9.0\ServiceContracts.csproj.AssemblyReference.cache
 C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\obj\Debug\net9.0\ServiceContracts.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\obj\Debug\net9.0\ServiceContracts.AssemblyInfoInputs.cache
 C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\obj\Debug\net9.0\ServiceContracts.AssemblyInfo.cs
@@ -20,4 +22,5 @@ C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\obj\De
 C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\obj\Debug\net9.0\ServiceContracts.dll
 C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\obj\Debug\net9.0\refint\ServiceContracts.dll
 C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\obj\Debug\net9.0\ServiceContracts.pdb
+C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\obj\Debug\net9.0\ServiceContracts.genruntimeconfig.cache
 C:\Users\mark_\Documents\test projects\StocksAppSolution\ServiceContracts\obj\Debug\net9.0\ref\ServiceContracts.dll
