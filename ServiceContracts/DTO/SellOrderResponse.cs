@@ -20,7 +20,7 @@ namespace ServiceContracts.DTO
 
         public double Price { get; set; }
 
-        public double TradeAmount { get; set; }
+        public double TradeAmount { get => field = Price * Quantity; set; }
 
 
     }

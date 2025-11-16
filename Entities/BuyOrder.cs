@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    internal class BuyOrder
+    public class BuyOrder
     {
-    //        Guid BuyOrderID
+    // Guid BuyOrderID
 
     //string StockSymbol[Mandatory]
 

@@ -73,4 +73,4 @@ C:\Users\mark_\Documents\test projects\StocksAppSolution\StocksApp\obj\Debug\net
 C:\Users\mark_\Documents\test projects\StocksAppSolution\StocksApp\obj\Debug\net9.0\StocksApp.csproj.Up2Date
 C:\Users\mark_\Documents\test projects\StocksAppSolution\StocksApp\bin\Debug\net9.0\Entities.dll
 C:\Users\mark_\Documents\test projects\StocksAppSolution\StocksApp\bin\Debug\net9.0\Entities.pdb
-C:\Users\mark_\Documents\test projects\StocksAppSolution\StocksApp\obj\Debug\net9.0\compressed\i6xnpvb7rc-t6jr8layhm.gz
+C:\Users\mark_\Documents\test projects\StocksAppSolution\StocksApp\obj\Debug\net9.0\compressed\i6xnpvb7rc-fx4szm1t9e.gz

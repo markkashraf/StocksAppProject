@@ -14,7 +14,7 @@ namespace ServiceContracts.CustomValidations
             DateTime? val = (DateTime?) value;
 
 
-            if (val is not null && val > Convert.ToDateTime("2000-01-01"))
+            if (val != null && val > Convert.ToDateTime("01-01-2000"))
                 return ValidationResult.Success;
             else
                 return new ValidationResult("Date must be newer than 2000-01-01.");

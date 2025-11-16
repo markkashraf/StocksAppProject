@@ -1,5 +1,58 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using StocksApp.ViewModels
+@using ServiceContracts.DTO
+@model Orders
+
 @{
+    ViewBag.Title = "Orders";
+    ViewBag.CurrentUrl = "~/Trade/Orders";
 }
+
+
+<div class="flex">
+    <div class="flex-1">
+        <div class="text-grey ml">
+            <span>Stocks</span>
+            <i class="fa-solid fa-caret-right"></i>
+            <span>Orders</span>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="flex orders-list">
+    <div id="buy-orders-list">
+        <div class="box">
+            <h4 class="text-grey mb">Buy Orders</h4>
+
+        @foreach(var order in Model.BuyOrders)
+            {
+                <div class="border-bottom text">
+                    <h3>@order.StockName  (@order.StockSymbol)</h3>
+                    <h4>@order.Quantity shares at $@order.Price</h4>
+                    <h4>Trade Amount: $@order.TradeAmount</h4>
+                    <h4>@order.DateAndTimeOfOrder</h4>
+                </div>
+            }
+        </div>
+
+    </div>
+
+    <div id="sell-orders-list">
+        <div class="box">
+            <h4 class="text-grey mb">Sell Orders</h4>
+
+
+            @foreach (var order in Model.SellOrders)
+            {
+                <div class="border-bottom text">
+                    <h3>@order.StockName  (@order.StockSymbol)</h3>
+                    <h4>@order.Quantity shares at $@order.Price</h4>
+                    <h4>Trade Amount: $@order.TradeAmount</h4>
+                    <h4>@order.DateAndTimeOfOrder</h4>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

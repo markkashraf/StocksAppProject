@@ -1,4 +1,4 @@
-﻿namespace Entities
+﻿namespace StocksApp.ViewModels
 {
     public class StockTrade
     {
