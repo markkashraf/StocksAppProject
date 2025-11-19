@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entities.CustomValidations;
+using ServiceContracts.CustomValidations;
 namespace Entities.Models
 {
     public class BuyOrder

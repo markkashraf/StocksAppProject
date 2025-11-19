@@ -1,10 +1,12 @@
-﻿using ServiceContracts;
+﻿using Microsoft.EntityFrameworkCore;
+using ServiceContracts;
 using ServiceContracts.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities;
 
 namespace Services
 {
@@ -20,26 +22,19 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
 */
     public class StocksService : IStocksService
     {
-        private readonly List<BuyOrderResponse>? _buyOrdersDB;
-        private readonly List<SellOrderResponse>? _sellOrdersDB;
+        private readonly StocksDbContext _db;
 
 
-
-
-        public StocksService()
+        public StocksService(StocksDbContext dbContext)
         {
-            _buyOrdersDB = new List<BuyOrderResponse>();
-            _sellOrdersDB = new List<SellOrderResponse>();
+            _db = dbContext;
         }
 
         public async Task<BuyOrderResponse> CreateBuyOrder(BuyOrderRequest? buyOrderRequest)
         {
             if (buyOrderRequest == null) throw new ArgumentNullException();
 
-            if(buyOrderRequest.Quantity < 1 || buyOrderRequest.Quantity > 
-                
-                
-                0000) throw new ArgumentException();
+            if(buyOrderRequest.Quantity < 1 || buyOrderRequest.Quantity > 100000) throw new ArgumentException();
 
             if(buyOrderRequest.Price > 10000 ||  buyOrderRequest.Price < 1) throw new ArgumentException();
 
@@ -57,7 +52,7 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
                 Quantity = buyOrderRequest.Quantity
             };
 
-            _buyOrdersDB?.Add(result);
+            _db.buyOrders.Add(result.ToBuyOrder());
             return result;
 
 
@@ -85,7 +80,7 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
                 Quantity = sellOrderRequest.Quantity
             };
 
-            _sellOrdersDB?.Add(result);
+            _db.sellOrders.Add(result.ToSellOrder());
 
             return result;
 
@@ -93,12 +88,43 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
 
         public async Task<List<BuyOrderResponse>> GetBuyOrders()
         {
-            return _buyOrdersDB;
+            List<BuyOrderResponse> result = new List<BuyOrderResponse>();
+            foreach(var item in _db.buyOrders.ToList())
+            {
+                result.Add(new BuyOrderResponse { BuyOrderID = item.BuyOrderID, DateAndTimeOfOrder = item.DateAndTimeOfOrder, Price = item.Price, Quantity = item.Quantity, StockName = item.StockName, StockSymbol = item.StockSymbol });
+            }
+
+            return result;
         }
+
+
+        private BuyOrderResponse ConvertBuyOrderToRespnose(BuyOrder input)
+        {
+            return new BuyOrderResponse
+            {
+                BuyOrderID = input.BuyOrderID,
+                DateAndTimeOfOrder = input.DateAndTimeOfOrder,
+                Price = input.Price,
+                Quantity = input.Quantity,
+                StockName = input.StockName,
+                StockSymbol = input.StockSymbol,
+                TradeAmount = 0
+            };
+        }
+
+
+
+
 
         public async Task<List<SellOrderResponse>> GetSellOrders()
         {
-            return _sellOrdersDB;
+            List<SellOrderResponse> result = new List<SellOrderResponse>();
+            foreach (var item in _db.sellOrders.ToList())
+            {
+                result.Add(new SellOrderResponse { SellOrderID = item.SellOrderID, DateAndTimeOfOrder = item.DateAndTimeOfOrder, Price = item.Price, Quantity = item.Quantity, StockName = item.StockName, StockSymbol = item.StockSymbol });
+            }
+
+            return result;
         }
     }
 }

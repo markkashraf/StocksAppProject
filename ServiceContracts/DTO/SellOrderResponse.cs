@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,14 @@ namespace ServiceContracts.DTO
 
         public double TradeAmount { get => field = Price * Quantity; set; }
 
+    }
 
+    public static class SellOrderResponseExtension
+    {
+        public static SellOrder ToSellOrder(this SellOrderResponse order)
+        {
+            SellOrder result = new SellOrder() { SellOrderID = order.SellOrderID, DateAndTimeOfOrder = order.DateAndTimeOfOrder, Price = order.Price, Quantity = order.Quantity, StockName = order.StockName, StockSymbol = order.StockSymbol };
+            return result;
+        }
     }
 }

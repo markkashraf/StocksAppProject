@@ -1,2 +1,2 @@
-C:\Users\mark_\Documents\test projects\StocksAppSolution\StocksApp\wwwroot\StyleSheet.css
+C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\wwwroot\StyleSheet.css
 wwwroot\StyleSheet.css

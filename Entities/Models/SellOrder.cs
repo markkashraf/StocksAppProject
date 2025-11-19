@@ -1,4 +1,4 @@
-﻿using Entities.CustomValidations;
+﻿using ServiceContracts.CustomValidations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

@@ -1,4 +1,4 @@
-﻿using ServiceContracts.CustomValidations;
+﻿using CustomValidations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -23,4 +23,10 @@ namespace ServiceContracts.DTO
         public double Price { get; set; }
 
     }
+
+
+
 }
+
+
+

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.CustomValidations
+namespace ServiceContracts.CustomValidations
 {
     public class OrderDateAtrributeCustomValidation : ValidationAttribute
     {

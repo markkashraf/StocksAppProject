@@ -10,9 +10,7 @@ namespace StocksApp.ViewModels
         [Required]
         public string? StockName { get; set; }
 
-        [Range(1, 
-            
-            0000)]
+        [Range(1, 100000)]
         public uint Quantity { get; set; }
         [Range(1, 10000)]
         public double Price { get; set; }
