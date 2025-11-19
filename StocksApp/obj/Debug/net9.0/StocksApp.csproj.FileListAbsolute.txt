@@ -317,13 +317,11 @@ C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\System.Composition.TypedParts.dll
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\System.Drawing.Common.dll
-C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\System.Formats.Asn1.dll
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\System.Memory.Data.dll
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\System.Runtime.Caching.dll
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\System.Security.Permissions.dll
-C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\System.Text.Json.dll
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\System.Windows.Extensions.dll
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
@@ -412,7 +410,6 @@ C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\scopedcss\bundle\StocksApp.styles.css
-C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\compressed\i6xnpvb7rc-e0a2ew0664.gz
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\staticwebassets.development.json
@@ -421,3 +418,5 @@ C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\StocksApp.csproj.Up2Date
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\StocksApp.genruntimeconfig.cache
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\ref\StocksApp.dll
+C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\compressed\215eur004x-{0}-e0a2ew0664-e0a2ew0664.gz
+C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\swae.build.ex.cache

@@ -53,6 +53,7 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
             };
 
             _db.buyOrders.Add(result.ToBuyOrder());
+           _db.SaveChanges();          
             return result;
 
 
@@ -80,7 +81,14 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
                 Quantity = sellOrderRequest.Quantity
             };
 
-            _db.sellOrders.Add(result.ToSellOrder());
+
+            var gg = result.ToSellOrder();
+            
+            _db.sellOrders.Add(gg);
+             _db.SaveChanges();
+
+            result.SellOrderID = gg.SellOrderID;
+
 
             return result;
 
@@ -91,12 +99,25 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
             List<BuyOrderResponse> result = new List<BuyOrderResponse>();
             foreach(var item in _db.buyOrders.ToList())
             {
-                result.Add(new BuyOrderResponse { BuyOrderID = item.BuyOrderID, DateAndTimeOfOrder = item.DateAndTimeOfOrder, Price = item.Price, Quantity = item.Quantity, StockName = item.StockName, StockSymbol = item.StockSymbol });
+                result.Add(ConvertBuyOrderToRespnose(item));
             }
 
             return result;
         }
 
+
+
+
+        public async Task<List<SellOrderResponse>> GetSellOrders()
+        {
+            List<SellOrderResponse> result = new List<SellOrderResponse>();
+            foreach (var item in _db.sellOrders.ToList())
+            {
+                result.Add(ConvertSellOrderToRespnose(item));
+            }
+
+            return result;
+        }
 
         private BuyOrderResponse ConvertBuyOrderToRespnose(BuyOrder input)
         {
@@ -114,17 +135,21 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
 
 
 
-
-
-        public async Task<List<SellOrderResponse>> GetSellOrders()
+        private SellOrderResponse ConvertSellOrderToRespnose(SellOrder input)
         {
-            List<SellOrderResponse> result = new List<SellOrderResponse>();
-            foreach (var item in _db.sellOrders.ToList())
+            return new SellOrderResponse
             {
-                result.Add(new SellOrderResponse { SellOrderID = item.SellOrderID, DateAndTimeOfOrder = item.DateAndTimeOfOrder, Price = item.Price, Quantity = item.Quantity, StockName = item.StockName, StockSymbol = item.StockSymbol });
-            }
-
-            return result;
+                SellOrderID = input.SellOrderID,
+                DateAndTimeOfOrder = input.DateAndTimeOfOrder,
+                Price = input.Price,
+                Quantity = input.Quantity,
+                StockName = input.StockName,
+                StockSymbol = input.StockSymbol,
+                TradeAmount = 0
+            };
         }
+
     }
 }
+
+

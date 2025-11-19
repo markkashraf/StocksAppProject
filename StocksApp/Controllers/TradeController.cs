@@ -48,12 +48,12 @@ namespace StocksApp.Controllers
         [HttpGet("Trade/Orders")]
         public IActionResult Orders()
         {
-            var buyOrders = _stocksService.GetBuyOrders();
-            var sellOrders = _stocksService.GetSellOrders();
+            List<BuyOrderResponse> buyOrders = _stocksService.GetBuyOrders().Result;
+            List<SellOrderResponse> sellOrders = _stocksService.GetSellOrders().Result;
             var ordersViewModel = new Orders();
 
-            ordersViewModel.BuyOrders = buyOrders.Result;
-            ordersViewModel.SellOrders = sellOrders.Result;
+            ordersViewModel.BuyOrders = buyOrders;
+            ordersViewModel.SellOrders = sellOrders;
          
             return View(ordersViewModel);
         }

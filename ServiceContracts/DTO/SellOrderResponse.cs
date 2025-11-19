@@ -29,8 +29,8 @@ namespace ServiceContracts.DTO
     {
         public static SellOrder ToSellOrder(this SellOrderResponse order)
         {
-            SellOrder result = new SellOrder() { SellOrderID = order.SellOrderID, DateAndTimeOfOrder = order.DateAndTimeOfOrder, Price = order.Price, Quantity = order.Quantity, StockName = order.StockName, StockSymbol = order.StockSymbol };
-            return result;
+              return new SellOrder() { SellOrderID = order.SellOrderID, DateAndTimeOfOrder = order.DateAndTimeOfOrder, Price = order.Price, Quantity = order.Quantity, StockName = order.StockName, StockSymbol = order.StockSymbol };
+             
         }
     }
 }

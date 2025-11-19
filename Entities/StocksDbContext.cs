@@ -18,8 +18,8 @@ namespace Entities
         override protected void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<BuyOrder>().ToTable(nameof(BuyOrder));
-            modelBuilder.Entity<SellOrder>().ToTable(nameof(SellOrder));
+            modelBuilder.Entity<BuyOrder>().ToTable("BuyOrders");
+            modelBuilder.Entity<SellOrder>().ToTable("SellOrders");
 
         }
     }
