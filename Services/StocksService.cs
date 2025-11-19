@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using System;
@@ -6,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entities;
 
 namespace Services
 {
@@ -23,11 +24,13 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
     public class StocksService : IStocksService
     {
         private readonly StocksDbContext _db;
+        private readonly IServiceScopeFactory _scopeFactory;
 
 
-        public StocksService(StocksDbContext dbContext)
+        public StocksService(StocksDbContext dbContext, IServiceScopeFactory scopeFactory)
         {
             _db = dbContext;
+            _scopeFactory = scopeFactory;
         }
 
         public async Task<BuyOrderResponse> CreateBuyOrder(BuyOrderRequest? buyOrderRequest)
@@ -82,12 +85,10 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
             };
 
 
-            var gg = result.ToSellOrder();
-            
-            _db.sellOrders.Add(gg);
-             _db.SaveChanges();
-
-            result.SellOrderID = gg.SellOrderID;
+            using var scope = _scopeFactory.CreateScope();
+            await using var db = scope.ServiceProvider.GetRequiredService<StocksDbContext>();
+            await db.sellOrders.AddAsync(result.ToSellOrder());
+            await db.SaveChangesAsync();
 
 
             return result;
