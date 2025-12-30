@@ -414,9 +414,8 @@ C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\StocksApp.csproj.Up2Date
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\StocksApp.genruntimeconfig.cache
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\ref\StocksApp.dll
-C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\compressed\215eur004x-{0}-e0a2ew0664-e0a2ew0664.gz
 C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\swae.build.ex.cache
+C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\obj\Debug\net9.0\compressed\215eur004x-{0}-pvl4007qox-pvl4007qox.gz

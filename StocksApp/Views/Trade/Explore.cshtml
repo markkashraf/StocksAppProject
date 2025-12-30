@@ -1,0 +1,39 @@
+﻿@model List<Stock>
+
+@{
+    ViewBag.Title = "Explore";
+    ViewBag.CurrentUrl = "~/Trade/Explore";
+}
+
+
+<div class="flex">
+    <div class="flex-1">
+        <div class="text-grey ml">
+            <span>Stocks</span>
+            <i class="fa-solid fa-caret-right"></i>
+            <span>Explore</span>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="flex stocks-list #stocks-list" >
+    <div id="buy-orders-list">
+        <div class="box">
+            <h4 class="text-grey mb">Stocks</h4>
+
+        @foreach(var order in Model)
+            {
+                <div class="border-bottom border-grey text">
+                    <h3>@order.StockName</h3>                    
+                    <h4 class="text-grey">(@order.StockSymbol)</h4>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+
+

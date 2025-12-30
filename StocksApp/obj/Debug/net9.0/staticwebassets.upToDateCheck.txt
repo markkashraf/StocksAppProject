@@ -1,2 +1,0 @@
-C:\Users\MarkWilliam\Documents\C# code\StocksAppProject\StocksApp\wwwroot\StyleSheet.css
-wwwroot\StyleSheet.css

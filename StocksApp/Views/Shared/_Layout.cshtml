@@ -52,6 +52,18 @@
                     {
                         <li><a asp-controller="Trade" asp-action="Orders">Orders</a></li>
                     }
+
+                    @if (ViewBag.CurrentUrl == "~/Trade/Explore")
+                    {
+                        <li><a asp-controller="Trade" asp-action="Explore" class="nav-active">Explore</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Trade" asp-action="Explore">Explore</a></li>
+                    }
+
+
+
                 </ul>
             </div>
 

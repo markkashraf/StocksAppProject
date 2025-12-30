@@ -6,39 +6,40 @@ using ServiceContracts.DTO;
 using StocksApp.Configuration;
 using StocksApp.ViewModels;
 using System.Reflection;
+using System.Threading.Tasks;
 
 
 namespace StocksApp.Controllers
 {
-    
+
     public class TradeController : Controller
     {
         private readonly IOptions<TradingOptions> _options;
         private TradingOptions _tradingOptions;
         private readonly IFinnhubService _finnhubService;
         private readonly IStocksService _stocksService;
-        
+
 
         public TradeController(IOptions<TradingOptions> options, IFinnhubService finnhubService, IStocksService stocksService)
         {
             _options = options;
             _finnhubService = finnhubService;
             _stocksService = stocksService;
+            _tradingOptions = _options.Value;
 
         }
-        
+
         [HttpGet("/")]
         [HttpGet("trade/index")]
         public IActionResult Index()
         {
-            _tradingOptions = _options.Value;
-            Dictionary<string,object>? stockPriceQuote = _finnhubService.GetStockPriceQuote(_tradingOptions.DefaultStockSymbol ?? "MSFT").Result ?? null;
-            Dictionary<string,object>? companyProfile = _finnhubService.GetCompanyProfile(_tradingOptions.DefaultStockSymbol?? "MSFT").Result ?? null;
+            Dictionary<string, object>? stockPriceQuote = _finnhubService.GetStockPriceQuote(_tradingOptions.DefaultStockSymbol ?? "MSFT").Result ?? null;
+            Dictionary<string, object>? companyProfile = _finnhubService.GetCompanyProfile(_tradingOptions.DefaultStockSymbol ?? "MSFT").Result ?? null;
 
             StockTrade stockTradeViewModel = new()
             {
                 StockSymbol = _tradingOptions.DefaultStockSymbol ?? "MSFT",
-                StockName = (string?) companyProfile?["name"].ToString(),
+                StockName = (string?)companyProfile?["name"].ToString(),
                 Price = Convert.ToDouble(stockPriceQuote?["c"].ToString())
             };
 
@@ -46,15 +47,15 @@ namespace StocksApp.Controllers
         }
 
         [HttpGet("Trade/Orders")]
-        public IActionResult Orders()
+        public async Task<IActionResult> Orders()
         {
-            List<BuyOrderResponse> buyOrders = _stocksService.GetBuyOrders().Result;
-            List<SellOrderResponse> sellOrders = _stocksService.GetSellOrders().Result;
+            List<BuyOrderResponse> buyOrders = await _stocksService.GetBuyOrders();
+            List<SellOrderResponse> sellOrders = await _stocksService.GetSellOrders();
             var ordersViewModel = new Orders();
 
             ordersViewModel.BuyOrders = buyOrders;
             ordersViewModel.SellOrders = sellOrders;
-         
+
             return View(ordersViewModel);
         }
 
@@ -62,42 +63,65 @@ namespace StocksApp.Controllers
 
         [HttpPost("Trade/BuyOrder")]
 
-        public IActionResult BuyOrder(BuyOrderRequest buyOrder)
+        public async Task<IActionResult> BuyOrder(BuyOrderRequest buyOrder)
         {
-
-            if (!ModelState.IsValid && ModelState["DateAndTimeOfOrder"].Errors.Any())
+            // Fix CS8602: Check for null before accessing ModelState["DateAndTimeOfOrder"]
+            if (!ModelState.IsValid && ModelState.TryGetValue("DateAndTimeOfOrder", out var dateState) && dateState is not null && dateState.Errors.Any())
             {
                 ModelState.Clear(); // or remove specific error
                 buyOrder.DateAndTimeOfOrder = DateTime.Now;
             }
 
-
-            if (buyOrder == null || (!ModelState.IsValid) ) return View("Orders");
+            if (buyOrder == null || (!ModelState.IsValid)) return View("Orders");
             else
             {
-                _stocksService.CreateBuyOrder(buyOrder);
+                await _stocksService.CreateBuyOrder(buyOrder);
                 return RedirectToAction("Orders", "Trade");
-            }    
+            }
         }
 
 
         [HttpPost("Trade/SellOrder")]
 
-        public IActionResult SellOrder(SellOrderRequest sellOrder)
+        public async Task<IActionResult> SellOrder(SellOrderRequest sellOrder)
         {
-
-            if (!ModelState.IsValid && ModelState["DateAndTimeOfOrder"].Errors.Any())
+            // Fix CS8602: Check for null before accessing ModelState["DateAndTimeOfOrder"]
+            if (!ModelState.IsValid && ModelState.TryGetValue("DateAndTimeOfOrder", out var dateState) && dateState is not null && dateState.Errors.Any())
             {
                 ModelState.Clear(); // or remove specific error
-                sellOrder.DateAndTimeOfOrder = DateTime.Now; 
+                sellOrder.DateAndTimeOfOrder = DateTime.Now;
             }
 
             if (sellOrder == null || (!ModelState.IsValid)) return View("Orders");
             else
             {
-                _stocksService.CreateSellOrder(sellOrder);
+                await _stocksService.CreateSellOrder(sellOrder);
                 return RedirectToAction("Orders", "Trade");
             }
+        }
+
+        [HttpGet("Trade/Explore")]
+        public async Task<IActionResult> Explore()
+        {
+            List<string> stockList = _tradingOptions.Top25PopularStocksList ?? ["MSFT"];
+            List<Stock> stockListViewModel = new();
+            foreach (string stockName in stockList)
+            {
+
+                Dictionary<string, object>? companyProfile = _finnhubService.GetCompanyProfile(stockName).Result ?? null;
+
+                Stock stockViewModel = new()
+                {
+                    StockSymbol = stockName,
+                    StockName = (string?)companyProfile?["name"].ToString(),
+
+                };
+
+                stockListViewModel.Add(stockViewModel);
+            }
+
+
+            return View(stockListViewModel);
         }
     }
 }

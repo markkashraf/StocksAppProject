@@ -24,13 +24,12 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
     public class StocksService : IStocksService
     {
         private readonly StocksDbContext _db;
-        private readonly IServiceScopeFactory _scopeFactory;
 
 
-        public StocksService(StocksDbContext dbContext, IServiceScopeFactory scopeFactory)
+
+        public StocksService(StocksDbContext dbContext)
         {
             _db = dbContext;
-            _scopeFactory = scopeFactory;
         }
 
         public async Task<BuyOrderResponse> CreateBuyOrder(BuyOrderRequest? buyOrderRequest)
@@ -55,9 +54,9 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
                 Quantity = buyOrderRequest.Quantity
             };
 
-            _db.buyOrders.Add(result.ToBuyOrder());
-           _db.SaveChanges();          
-            return result;
+           await _db.buyOrders.AddAsync(result.ToBuyOrder());
+           await _db.SaveChangesAsync();          
+           return result;
 
 
         }
@@ -85,10 +84,8 @@ GetSellOrders: Returns the existing list of sell orders retrieved from database 
             };
 
 
-            using var scope = _scopeFactory.CreateScope();
-            await using var db = scope.ServiceProvider.GetRequiredService<StocksDbContext>();
-            await db.sellOrders.AddAsync(result.ToSellOrder());
-            await db.SaveChangesAsync();
+            await _db.sellOrders.AddAsync(result.ToSellOrder());
+            await _db.SaveChangesAsync();
 
 
             return result;
