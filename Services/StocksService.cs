@@ -1,153 +1,94 @@
 ﻿using Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+using RepositoryContracts;
 using ServiceContracts;
 using ServiceContracts.DTO;
+using Services.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Net.Http;
+using System.Text.Json;
 
 namespace Services
 {
-    /*
-CreateBuyOrder: Inserts a new buy order into the database table called 'BuyOrders'.
-
-CreateSellOrder: Inserts a new sell order into the database table called 'SellOrders'.
-
-GetBuyOrders: Returns the existing list of buy orders retrieved from database table called 'BuyOrders'.
-
-GetSellOrders: Returns the existing list of sell orders retrieved from database table called 'SellOrders'.
-
-*/
-    public class StocksService : IStocksService
-    {
-        private readonly StocksDbContext _db;
+ public class StocksService : IStocksService
+ {
+  //private field
+  private readonly IStocksRepository _stocksRepository;
 
 
-
-        public StocksService(StocksDbContext dbContext)
-        {
-            _db = dbContext;
-        }
-
-        public async Task<BuyOrderResponse> CreateBuyOrder(BuyOrderRequest? buyOrderRequest)
-        {
-            if (buyOrderRequest == null) throw new ArgumentNullException();
-
-            if(buyOrderRequest.Quantity < 1 || buyOrderRequest.Quantity > 100000) throw new ArgumentException();
-
-            if(buyOrderRequest.Price > 10000 ||  buyOrderRequest.Price < 1) throw new ArgumentException();
-
-            if(buyOrderRequest.StockSymbol is null) throw new ArgumentException();
-
-            if(buyOrderRequest.DateAndTimeOfOrder <= DateTime.Parse("2000-01-01")) throw new ArgumentException();
-
-            var result = new BuyOrderResponse
-            {
-                BuyOrderID = new(),
-                Price = buyOrderRequest.Price,
-                DateAndTimeOfOrder = buyOrderRequest.DateAndTimeOfOrder,
-                StockName = buyOrderRequest.StockName,
-                StockSymbol = buyOrderRequest.StockSymbol,
-                Quantity = buyOrderRequest.Quantity
-            };
-
-           await _db.buyOrders.AddAsync(result.ToBuyOrder());
-           await _db.SaveChangesAsync();          
-           return result;
+  /// <summary>
+  /// Constructor of StocksService class that executes when a new object is created for the class
+  /// </summary>
+  public StocksService(IStocksRepository stocksRepository)
+  {
+   _stocksRepository = stocksRepository;
+  }
 
 
-        }
+  public async Task<BuyOrderResponse> CreateBuyOrder(BuyOrderRequest? buyOrderRequest)
+  {
+   //Validation: buyOrderRequest can't be null
+   if (buyOrderRequest == null)
+    throw new ArgumentNullException(nameof(buyOrderRequest));
 
-        public async Task<SellOrderResponse> CreateSellOrder(SellOrderRequest? sellOrderRequest)
-        {
-            if (sellOrderRequest == null) throw new ArgumentNullException();
+   //Model validation
+   ValidationHelper.ModelValidation(buyOrderRequest);
 
-            if (sellOrderRequest.Quantity < 1 || sellOrderRequest.Quantity > 100000) throw new ArgumentException();
+   //convert buyOrderRequest into BuyOrder type
+   BuyOrder buyOrder = buyOrderRequest.ToBuyOrder();
 
-            if (sellOrderRequest.Price > 10000 || sellOrderRequest.Price < 1) throw new ArgumentException();
+   //generate BuyOrderID
+   buyOrder.BuyOrderID = Guid.NewGuid();
 
-            if (sellOrderRequest.StockSymbol is null) throw new ArgumentException();
+   //add buy order object to buy orders list
+   BuyOrder buyOrderFromRepo = await _stocksRepository.CreateBuyOrder(buyOrder);
 
-            if (sellOrderRequest.DateAndTimeOfOrder <= DateTime.Parse("2000-01-01")) throw new ArgumentException();
-
-            var result = new SellOrderResponse
-            {
-                SellOrderID = new(),
-                Price = sellOrderRequest.Price,
-                DateAndTimeOfOrder = sellOrderRequest.DateAndTimeOfOrder,
-                StockName = sellOrderRequest.StockName,
-                StockSymbol = sellOrderRequest.StockSymbol,
-                Quantity = sellOrderRequest.Quantity
-            };
+   //convert the BuyOrder object into BuyOrderResponse type
+   return buyOrder.ToBuyOrderResponse();
+  }
 
 
-            await _db.sellOrders.AddAsync(result.ToSellOrder());
-            await _db.SaveChangesAsync();
+  public async Task<SellOrderResponse> CreateSellOrder(SellOrderRequest? sellOrderRequest)
+  {
+   //Validation: sellOrderRequest can't be null
+   if (sellOrderRequest == null)
+    throw new ArgumentNullException(nameof(sellOrderRequest));
+
+   //Model validation
+   ValidationHelper.ModelValidation(sellOrderRequest);
+
+   //convert sellOrderRequest into SellOrder type
+   SellOrder sellOrder = sellOrderRequest.ToSellOrder();
+
+   //generate SellOrderID
+   sellOrder.SellOrderID = Guid.NewGuid();
+
+   //add sell order object to sell orders list
+   SellOrder SellOrderFromRepo = await _stocksRepository.CreateSellOrder(sellOrder);
+
+   //convert the SellOrder object into SellOrderResponse type
+   return sellOrder.ToSellOrderResponse();
+  }
 
 
-            return result;
+  public async Task<List<BuyOrderResponse>> GetBuyOrders()
+  {
+   //Convert all BuyOrder objects into BuyOrderResponse objects
+   List<BuyOrder> buyOrders = await _stocksRepository.GetBuyOrders();
 
-        }
-
-        public async Task<List<BuyOrderResponse>> GetBuyOrders()
-        {
-            List<BuyOrderResponse> result = new List<BuyOrderResponse>();
-            foreach(var item in _db.buyOrders.ToList())
-            {
-                result.Add(ConvertBuyOrderToRespnose(item));
-            }
-
-            return result;
-        }
+   return buyOrders.Select(temp => temp.ToBuyOrderResponse()).ToList();
+  }
 
 
+  public async Task<List<SellOrderResponse>> GetSellOrders()
+  {
+   //Convert all SellOrder objects into SellOrderResponse objects
+   List<SellOrder> sellOrders = await _stocksRepository.GetSellOrders();
 
-
-        public async Task<List<SellOrderResponse>> GetSellOrders()
-        {
-            List<SellOrderResponse> result = new List<SellOrderResponse>();
-            foreach (var item in _db.sellOrders.ToList())
-            {
-                result.Add(ConvertSellOrderToRespnose(item));
-            }
-
-            return result;
-        }
-
-        private BuyOrderResponse ConvertBuyOrderToRespnose(BuyOrder input)
-        {
-            return new BuyOrderResponse
-            {
-                BuyOrderID = input.BuyOrderID,
-                DateAndTimeOfOrder = input.DateAndTimeOfOrder,
-                Price = input.Price,
-                Quantity = input.Quantity,
-                StockName = input.StockName,
-                StockSymbol = input.StockSymbol,
-                TradeAmount = 0
-            };
-        }
-
-
-
-        private SellOrderResponse ConvertSellOrderToRespnose(SellOrder input)
-        {
-            return new SellOrderResponse
-            {
-                SellOrderID = input.SellOrderID,
-                DateAndTimeOfOrder = input.DateAndTimeOfOrder,
-                Price = input.Price,
-                Quantity = input.Quantity,
-                StockName = input.StockName,
-                StockSymbol = input.StockSymbol,
-                TradeAmount = 0
-            };
-        }
-
-    }
+   return sellOrders.Select(temp => temp.ToSellOrderResponse()).ToList();
+  }
+ }
 }
 
 

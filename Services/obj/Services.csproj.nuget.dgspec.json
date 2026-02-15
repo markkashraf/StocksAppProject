@@ -1,36 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Services\\Services.csproj": {}
+    "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Entities\\Entities.csproj": {
+    "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\MarkWilliam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\mark_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MarkWilliam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mark_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -44,31 +44,21 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.11, )"
-            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[9.0.11, )"
+              "version": "[6.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.11, )"
+              "version": "[6.0.8, )"
             }
           },
           "imports": [
@@ -82,45 +72,142 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj": {
+    "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\RepositoryContracts\\RepositoryContracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj",
+        "projectUniqueName": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\RepositoryContracts\\RepositoryContracts.csproj",
+        "projectName": "RepositoryContracts",
+        "projectPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\RepositoryContracts\\RepositoryContracts.csproj",
+        "packagesPath": "C:\\Users\\mark_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\RepositoryContracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mark_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj": {
+                "projectPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj",
         "projectName": "ServiceContracts",
-        "projectPath": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj",
-        "packagesPath": "C:\\Users\\MarkWilliam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\ServiceContracts\\obj\\",
+        "projectPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj",
+        "packagesPath": "C:\\Users\\mark_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\ServiceContracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MarkWilliam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mark_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Entities\\Entities.csproj"
+              "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\Entities\\Entities.csproj"
               }
             }
           }
@@ -135,11 +222,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
@@ -151,48 +238,62 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Services\\Services.csproj": {
+    "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\MarkWilliam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Services\\obj\\",
+        "projectPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\mark_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MarkWilliam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mark_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\Entities\\Entities.csproj"
+              "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\RepositoryContracts\\RepositoryContracts.csproj": {
+                "projectPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\RepositoryContracts\\RepositoryContracts.csproj"
               },
-              "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj": {
-                "projectPath": "C:\\Users\\MarkWilliam\\Documents\\C# code\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj"
+              "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj": {
+                "projectPath": "C:\\Users\\mark_\\Documents\\Projects\\ASP.NET\\StocksAppProject\\ServiceContracts\\ServiceContracts.csproj"
               }
             }
           }
@@ -207,35 +308,15 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[9.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[9.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.11, )"
-            },
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -249,12 +330,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119\\RuntimeIdentifierGraph.json"
         }
       }
     }

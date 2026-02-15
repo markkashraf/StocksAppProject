@@ -1,44 +1,64 @@
 ﻿using Microsoft.Extensions.Configuration;
+using RepositoryContracts;
 using ServiceContracts;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace Services
 {
-    public class FinnhubService : IFinnhubService
-    {
-        private readonly IConfiguration _configuration;
+ public class FinnhubService : IFinnhubService
+ {
+  private readonly IFinnhubRepository _finnhubRepository;
 
 
-        public FinnhubService(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }   
+  public FinnhubService(IFinnhubRepository finnhubRepository)
+  {
+   _finnhubRepository = finnhubRepository;
+  }
 
 
-        public async Task<Dictionary<string, object>?> GetCompanyProfile(string stockSymbol)
-        {
-            Dictionary<string, object>? result = new();
-            using (var client = new HttpClient())
-            {
-                HttpResponseMessage response = await client.GetAsync($"https://finnhub.io/api/v1/stock/profile2?symbol={stockSymbol}&token={_configuration["token"]}");
-                string? content = await response.Content.ReadAsStringAsync();
-                result = JsonSerializer.Deserialize<Dictionary<string, object>>(content);
-            }
+  public async Task<Dictionary<string, object>?> GetCompanyProfile(string stockSymbol)
+  {
+   //invoke repository
+   Dictionary<string, object>? responseDictionary = await _finnhubRepository.GetCompanyProfile(stockSymbol);
 
-             return result;
-        }
-        public async Task<Dictionary<string, object>?> GetStockPriceQuote(string stockSymbol)
-        {
-            Dictionary<string, object>? result = new();
-            using (var client = new HttpClient())
-            {
-                HttpResponseMessage response = await client.GetAsync($"https://finnhub.io/api/v1/quote?symbol={stockSymbol}&token={_configuration["token"]}");
-                string? content = await response.Content.ReadAsStringAsync();
-                result = JsonSerializer.Deserialize<Dictionary<string, object>>(content);
-            }
+   //return response dictionary back to the caller
+   return responseDictionary;
+  }
 
-            return result;
 
-        }
-    }
+  public async Task<Dictionary<string, object>?> GetStockPriceQuote(string stockSymbol)
+  {
+   //invoke repository
+   Dictionary<string, object>? responseDictionary = await _finnhubRepository.GetStockPriceQuote(stockSymbol);
+
+   //return response dictionary back to the caller
+   return responseDictionary;
+  }
+
+
+  public async Task<List<Dictionary<string, string>>?> GetStocks()
+  {
+   //invoke repository
+   List<Dictionary<string, string>>? responseDictionary = await _finnhubRepository.GetStocks();
+
+   //return response dictionary back to the caller
+   return responseDictionary;
+  }
+
+
+  public async Task<Dictionary<string, object>?> SearchStocks(string stockSymbolToSearch)
+  {
+   //invoke repository
+   Dictionary<string, object>? responseDictionary = await _finnhubRepository.SearchStocks(stockSymbolToSearch);
+
+   //return response dictionary back to the caller
+   return responseDictionary;
+  }
+ }
 }
+
