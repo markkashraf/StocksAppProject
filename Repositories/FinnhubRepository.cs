@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using RepositoryContracts;
+using Serilog;
 using System.Net.Http;
 using System.Text.Json;
 
@@ -10,17 +12,23 @@ namespace Repositories
  {
   private readonly IHttpClientFactory _httpClientFactory;
   private readonly IConfiguration _configuration;
+  private readonly ILogger<FinnhubRepository> _logger;
+  private readonly IDiagnosticContext _diagnosticContext;
 
-
-  public FinnhubRepository(IHttpClientFactory httpClientFactory, IConfiguration configuration)
+  public FinnhubRepository(IHttpClientFactory httpClientFactory, IConfiguration configuration, ILogger<FinnhubRepository> logger, IDiagnosticContext diagnosticContext)
   {
    _httpClientFactory = httpClientFactory;
    _configuration = configuration;
+   _logger = logger;
+   _diagnosticContext = diagnosticContext;
   }
 
 
   public async Task<Dictionary<string, object>?> GetCompanyProfile(string stockSymbol)
   {
+   //Log
+   _logger.LogInformation("In {ClassName}.{MethodName}", nameof(FinnhubRepository), nameof(GetCompanyProfile));
+
    //create http client
    HttpClient httpClient = _httpClientFactory.CreateClient();
 
@@ -36,6 +44,7 @@ namespace Repositories
 
    //read response body
    string responseBody = await httpResponseMessage.Content.ReadAsStringAsync();
+   _diagnosticContext.Set("Response from finnhub", responseBody);
 
    //convert response body (from JSON into Dictionary)
    Dictionary<string, object>? responseDictionary = JsonSerializer.Deserialize<Dictionary<string, object>>(responseBody);
@@ -53,6 +62,9 @@ namespace Repositories
 
   public async Task<Dictionary<string, object>?> GetStockPriceQuote(string stockSymbol)
   {
+   //Log
+   _logger.LogInformation("In {ClassName}.{MethodName}", nameof(FinnhubRepository), nameof(GetStockPriceQuote));
+
    //create http client
    HttpClient httpClient = _httpClientFactory.CreateClient();
 
@@ -68,6 +80,7 @@ namespace Repositories
 
    //read response body
    string responseBody = await httpResponseMessage.Content.ReadAsStringAsync();
+   _diagnosticContext.Set("Response from finnhub", responseBody);
 
    //convert response body (from JSON into Dictionary)
    Dictionary<string, object>? responseDictionary = JsonSerializer.Deserialize<Dictionary<string, object>>(responseBody);
@@ -85,6 +98,9 @@ namespace Repositories
 
   public async Task<List<Dictionary<string, string>>?> GetStocks()
   {
+   //Log
+   _logger.LogInformation("In {ClassName}.{MethodName}", nameof(FinnhubRepository), nameof(GetStocks));
+
    //create http client
    HttpClient httpClient = _httpClientFactory.CreateClient();
 
@@ -100,6 +116,7 @@ namespace Repositories
 
    //read response body
    string responseBody = await httpResponseMessage.Content.ReadAsStringAsync();
+   //_diagnosticContext.Set("Response from finnhub", responseBody);
 
    //convert response body (from JSON into Dictionary)
    List<Dictionary<string, string>>? responseDictionary = JsonSerializer.Deserialize<List<Dictionary<string, string>>>(responseBody);
@@ -114,6 +131,9 @@ namespace Repositories
 
   public async Task<Dictionary<string, object>?> SearchStocks(string stockSymbolToSearch)
   {
+   //Log
+   _logger.LogInformation("In {ClassName}.{MethodName}", nameof(FinnhubRepository), nameof(SearchStocks));
+
    //create http client
    HttpClient httpClient = _httpClientFactory.CreateClient();
 
@@ -132,6 +152,7 @@ namespace Repositories
 
    //convert response body (from JSON into Dictionary)
    Dictionary<string, object>? responseDictionary = JsonSerializer.Deserialize<Dictionary<string, object>>(responseBody);
+   _diagnosticContext.Set("Response from finnhub", responseBody);
 
    if (responseDictionary == null)
     throw new InvalidOperationException("No response from server");
