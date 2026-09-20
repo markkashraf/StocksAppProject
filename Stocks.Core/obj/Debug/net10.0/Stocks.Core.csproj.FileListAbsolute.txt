@@ -1,0 +1,13 @@
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\bin\Debug\net10.0\Stocks.Core.deps.json
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\bin\Debug\net10.0\Stocks.Core.dll
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\bin\Debug\net10.0\Stocks.Core.pdb
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\obj\Debug\net10.0\Stocks.Core.csproj.AssemblyReference.cache
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\obj\Debug\net10.0\Stocks.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\obj\Debug\net10.0\Stocks.Core.AssemblyInfoInputs.cache
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\obj\Debug\net10.0\Stocks.Core.AssemblyInfo.cs
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\obj\Debug\net10.0\Stocks.Core.csproj.CoreCompileInputs.cache
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\obj\Debug\net10.0\Stocks.Core.sourcelink.json
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\obj\Debug\net10.0\Stocks.Core.dll
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\obj\Debug\net10.0\refint\Stocks.Core.dll
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\obj\Debug\net10.0\Stocks.Core.pdb
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Core\obj\Debug\net10.0\ref\Stocks.Core.dll

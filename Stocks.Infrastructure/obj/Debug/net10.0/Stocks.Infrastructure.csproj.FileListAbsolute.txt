@@ -1,0 +1,16 @@
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\bin\Debug\net10.0\Stocks.Infrastructure.deps.json
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\bin\Debug\net10.0\Stocks.Infrastructure.dll
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\bin\Debug\net10.0\Stocks.Infrastructure.pdb
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\bin\Debug\net10.0\Stocks.Core.dll
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\bin\Debug\net10.0\Stocks.Core.pdb
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\obj\Debug\net10.0\Stocks.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\obj\Debug\net10.0\Stocks.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\obj\Debug\net10.0\Stocks.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\obj\Debug\net10.0\Stocks.Infrastructure.AssemblyInfo.cs
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\obj\Debug\net10.0\Stocks.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\obj\Debug\net10.0\Stocks.Infrastructure.sourcelink.json
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\obj\Debug\net10.0\Stocks.I.B763F30D.Up2Date
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\obj\Debug\net10.0\Stocks.Infrastructure.dll
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\obj\Debug\net10.0\refint\Stocks.Infrastructure.dll
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\obj\Debug\net10.0\Stocks.Infrastructure.pdb
+C:\Users\mark_\OneDrive\Documents\StocksAppProject\Stocks.Infrastructure\obj\Debug\net10.0\ref\Stocks.Infrastructure.dll
