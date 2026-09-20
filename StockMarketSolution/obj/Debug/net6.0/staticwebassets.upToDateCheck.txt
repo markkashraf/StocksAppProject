@@ -1,4 +1,0 @@
-wwwroot\Rotativa\wkhtmltopdf.exe
-wwwroot\Scripts\ChartScript.js
-wwwroot\Scripts\FinnhubScript.js
-wwwroot\StyleSheet.css

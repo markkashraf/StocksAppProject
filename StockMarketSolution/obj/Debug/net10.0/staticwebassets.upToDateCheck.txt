@@ -1,7 +1,0 @@
-C:\Users\mark_\Documents\Projects\ASP.NET\StocksAppProject\StockMarketSolution\wwwroot\StyleSheet.css
-C:\Users\mark_\Documents\Projects\ASP.NET\StocksAppProject\StockMarketSolution\wwwroot\Scripts\FinnhubScript.js
-C:\Users\mark_\Documents\Projects\ASP.NET\StocksAppProject\StockMarketSolution\wwwroot\Scripts\ChartScript.js
-wwwroot\Rotativa\wkhtmltopdf.exe
-wwwroot\Scripts\ChartScript.js
-wwwroot\Scripts\FinnhubScript.js
-wwwroot\StyleSheet.css
